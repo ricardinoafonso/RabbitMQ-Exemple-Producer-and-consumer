@@ -16,7 +16,6 @@ export class RabbitServerMQ {
   async consumer (queue: string, callback: (message: Message)=> void) {
     return await this.channel.consume(queue, (message: any | null)=>{
         callback(message)
-        //this.channel.ack(message)
     })
   }
 }
